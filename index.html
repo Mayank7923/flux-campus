@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX — Empowering Campus Communities</title>
+  <meta name="description" content="FLUX is a student-led technical and creative community focused on empowering campus builders, designers, and researchers to turn ideas into tangible projects." />
+  <meta name="theme-color" content="#F7F5F0" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FLUX — Empowering Campus Communities" />
+  <meta property="og:description" content="Where students meet, build, experiment, and turn ideas into something real." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Design System Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js (Local copy with CDN fallback) -->
+  <script src="three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Keyboard Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       01. EDITORIAL NAVIGATION
+       ========================================================================= -->
+  <header class="site-nav" id="site-nav" role="banner">
+    <div class="container nav-inner">
+      <!-- Brand Wordmark -->
+      <a href="#hero" class="nav-brand" aria-label="FLUX Homepage">
+        <span>FLUX</span>
+        <span class="nav-brand-dot" aria-hidden="true"></span>
+        <span class="nav-brand-tag">CAMPUS INITIATIVE</span>
+      </a>
+
+      <!-- Primary Navigation Links -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">
+          <span class="nav-link-index">01</span>
+          <span>About</span>
+        </a>
+        <a href="#ecosystem" class="nav-link">
+          <span class="nav-link-index">02</span>
+          <span>Ecosystem</span>
+        </a>
+        <a href="#events" class="nav-link">
+          <span class="nav-link-index">03</span>
+          <span>Events</span>
+        </a>
+        <a href="#projects" class="nav-link">
+          <span class="nav-link-index">04</span>
+          <span>Projects</span>
+        </a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="#join" class="btn btn-primary" id="nav-cta-join">
+          <span>Join FLUX</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="#about" class="mobile-nav-link">01 // About</a>
+      <a href="#ecosystem" class="mobile-nav-link">02 // Ecosystem</a>
+      <a href="#events" class="mobile-nav-link">03 // Events</a>
+      <a href="#projects" class="mobile-nav-link">04 // Projects</a>
+    </div>
+    <a href="#join" class="btn btn-cobalt" style="width: 100%; justify-content: center; margin-top: auto;">Join FLUX Community →</a>
+  </div>
+
+  <main id="main-content">
+    <!-- =========================================================================
+         02. HERO SECTION — THE EDITORIAL 3D CENTERPIECE
+         ========================================================================= -->
+    <section class="hero-section container" id="hero" aria-label="Introduction">
+      <!-- Hero Top Telemetry Strip -->
+      <div class="hero-meta-strip">
+        <div class="mono-stamp">FLUX — CAMPUS TECHNOLOGY COMMUNITY</div>
+        <div class="status-pill">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>DEMO PREVIEW // VOL. 01</span>
+        </div>
+      </div>
+
+      <!-- Main Editorial Hero Layout -->
+      <div class="hero-editorial-grid">
+        <!-- Left: Monumental Typography & Human Statement -->
+        <div class="hero-typography-block">
+          <div class="hero-eyebrow mono-stamp">
+            <span>EDITORIAL SYSTEMS</span>
+            <span aria-hidden="true">•</span>
+            <span>OPEN COLLABORATION</span>
+          </div>
+
+          <!-- Intentional 3-line headline: Never breaks awkwardly -->
+          <h1 class="display-hero hero-title">
+            <span class="title-line">EMPOWERING</span>
+            <span class="title-line">CAMPUS</span>
+            <span class="title-line">COMMUNITIES<span class="accent-char">.</span></span>
+          </h1>
+
+          <div class="hero-narrative-group">
+            <p class="hero-description">
+              Where students meet, build, experiment, and turn ideas into something real.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#about" class="btn btn-primary" id="hero-btn-explore">
+                <span>Explore FLUX</span>
+                <span class="btn-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a href="#events" class="btn btn-secondary" id="hero-btn-events">
+                <span>Upcoming Events</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Visual Centerpiece Canvas -->
+        <div class="hero-visual-stage" aria-label="Interactive 3D Kinetic Sculpture representing modular student collaboration">
+          <!-- Framing Stamps -->
+          <div class="canvas-framing-stamp stamp-top-right">
+            [SYS // 3D-SPATIAL-ARTIFACT]
+          </div>
+          <div class="canvas-framing-stamp stamp-bottom-left">
+            [INTERACT: DRAG TO ROTATE]
+          </div>
+
+          <!-- WebGL Container -->
+          <div class="webgl-canvas-container" id="webgl-hero-container">
+            <div class="canvas-loading-state" id="canvas-loading">Initializing Architectural Sculpture...</div>
+            <div class="sculpture-tooltip" id="sculpture-tooltip" role="tooltip"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Index / Telemetry Bar -->
+      <div class="hero-footer-bar">
+        <div class="telemetry-item">
+          <span class="telemetry-dot"></span>
+          <span class="mono-stamp">04 CORE PILLARS</span>
+        </div>
+        <div class="telemetry-hint" style="justify-self: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v8m-4-4h8"></path>
+          </svg>
+          <span>INTERACTIVE SPATIAL ARTIFACT: "THE ASSEMBLAGE"</span>
+        </div>
+        <div class="telemetry-item" style="justify-self: end;">
+          <span class="mono-stamp">OPEN CAMPUS INITIATIVE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         03. ABOUT / VISION SECTION
+         Editorial Storytelling & Asymmetrical Structure
+         ========================================================================= -->
+    <section class="section-padding container" id="about">
+      <div class="about-editorial-layout">
+        <!-- Sticky Headline Block -->
+        <div class="about-headline-block">
+          <div class="about-badge mono-stamp">[ 01 // VISION & DIRECTION ]</div>
+          <h2 class="section-statement about-statement">
+            “A campus becomes powerful when its people start building together.”
+          </h2>
+          <div class="about-narrative-copy">
+            <p class="lead-p">
+              Too much student potential remains siloed across departments, lecture halls, and solitary desks. FLUX operates as an open studio workbench: connecting student developers, hardware tinkerers, visual designers, and domain researchers into collaborative project squads without bureaucratic gatekeeping.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: 4-Pillar Architectural Ledger -->
+        <div class="principles-ledger">
+          <article class="principle-card">
+            <div class="principle-header">
+              <span class="principle-index">PILLAR 01</span>
+              <span class="mono-stamp">TANGIBLE PROTOTYPING</span>
+            </div>
+            <h3 class="principle-title">BUILD</h3>
+            <p class="principle-text">
+              We move from passive consumption to active production. Students write code, mill PCBs, deploy web applications, and produce hardware that solves immediate campus challenges.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-header">
+              <span class="principle-index">PILLAR 02</span>
+              <span class="mono-stamp">CROSS-DISCIPLINARY</span>
+            </div>
+            <h3 class="principle-title">CONNECT</h3>
+            <p class="principle-text">
+              Great products are never built by engineers alone. FLUX brings together programmers, visual designers, spatial thinkers, and domain researchers into cohesive teams.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-header">
+              <span class="principle-index">PILLAR 03</span>
+              <span class="mono-stamp">SAFE TO FAIL</span>
+            </div>
+            <h3 class="principle-title">EXPERIMENT</h3>
+            <p class="principle-text">
+              A studio environment with zero academic penalty for ambitious risks. Hack on unconventional architectures, explore experimental graphics, and validate wild ideas freely.
+            </p>
+          </article>
+
+          <article class="principle-card">
+            <div class="principle-header">
+              <span class="principle-index">PILLAR 04</span>
+              <span class="mono-stamp">OWNERSHIP & IMPACT</span>
+            </div>
+            <h3 class="principle-title">LEAD</h3>
+            <p class="principle-text">
+              Every initiative is student-conceived and student-steered. Members direct hackathons, lead open-source maintenance, and mentor the incoming freshman cohorts.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- =========================================================================
+         04. COMMUNITY ECOSYSTEM SECTION
+         Motion-Driven Interactive Journey
+         ========================================================================= -->
+    <section class="section-padding ecosystem-section" id="ecosystem">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header-compact">
+          <div class="title-wrap">
+            <div class="mono-stamp" style="margin-bottom: var(--space-2);">[ 02 // SYSTEM ARCHITECTURE ]</div>
+            <h2 class="section-statement">How Ideas Become Reality</h2>
+          </div>
+          <p class="body-p" style="max-width: 440px;">
+            A structured progression that transforms early curiosity into published prototypes and campus leadership.
+          </p>
+        </div>
+
+        <!-- Interactive Pipeline Track (Full Keyboard Accessible) -->
+        <div class="pipeline-track" role="tablist" aria-label="Ecosystem Progression Stages">
+          <button type="button" class="pipeline-node active" role="tab" tabindex="0" aria-selected="true" data-stage="0" id="tab-stage-0" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 01</span>
+            <span class="node-title">Students</span>
+            <span class="node-arrow">Explore →</span>
+          </button>
+          <button type="button" class="pipeline-node" role="tab" tabindex="-1" aria-selected="false" data-stage="1" id="tab-stage-1" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 02</span>
+            <span class="node-title">Ideas</span>
+            <span class="node-arrow">Formulate →</span>
+          </button>
+          <button type="button" class="pipeline-node" role="tab" tabindex="-1" aria-selected="false" data-stage="2" id="tab-stage-2" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 03</span>
+            <span class="node-title">Teams</span>
+            <span class="node-arrow">Unite →</span>
+          </button>
+          <button type="button" class="pipeline-node" role="tab" tabindex="-1" aria-selected="false" data-stage="3" id="tab-stage-3" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 04</span>
+            <span class="node-title">Events</span>
+            <span class="node-arrow">Sprint →</span>
+          </button>
+          <button type="button" class="pipeline-node" role="tab" tabindex="-1" aria-selected="false" data-stage="4" id="tab-stage-4" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 05</span>
+            <span class="node-title">Projects</span>
+            <span class="node-arrow">Ship →</span>
+          </button>
+          <button type="button" class="pipeline-node" role="tab" tabindex="-1" aria-selected="false" data-stage="5" id="tab-stage-5" aria-controls="ecosystem-detail-box">
+            <span class="node-step">STAGE 06</span>
+            <span class="node-title">Community</span>
+            <span class="node-arrow">Amplify ✦</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Stage Detail Box -->
+        <div class="ecosystem-detail-box" id="ecosystem-detail-box" role="tabpanel" aria-labelledby="tab-stage-0">
+          <div>
+            <div class="detail-stage-num" id="stage-num-display">STAGE 01 // ENTRY POINT</div>
+            <h3 class="detail-stage-title" id="stage-title-display">Students</h3>
+            <p class="detail-stage-desc" id="stage-desc-display">
+              Curious individuals from computer science, art, architecture, business, and humanities join our open studio hours and weekly office hours to discover like-minded collaborators.
+            </p>
+            <div class="mono-stamp" id="stage-highlight-display">KEY OUTCOME: Cross-pollination of diverse campus talent</div>
+          </div>
+          <div class="detail-meta-list">
+            <div class="detail-meta-item">
+              <span class="detail-meta-label">Cadence</span>
+              <span id="stage-cadence-display">Weekly Open Sessions</span>
+            </div>
+            <div class="detail-meta-item">
+              <span class="detail-meta-label">Access</span>
+              <span id="stage-access-display">All Departments / Zero Prereqs</span>
+            </div>
+            <div class="detail-meta-item">
+              <span class="detail-meta-label">Environment</span>
+              <span id="stage-env-display">Studio Lab & Discord Network</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         05. UPCOMING EVENTS SECTION
+         Curated Cultural Calendar Format (Sample / Preview Data)
+         ========================================================================= -->
+    <section class="section-padding container" id="events">
+      <!-- Section Header -->
+      <div class="section-header-compact">
+        <div class="title-wrap">
+          <div class="mono-stamp" style="margin-bottom: var(--space-2);">[ 03 // CULTURAL CALENDAR — DEMO SCHEDULE ]</div>
+          <h2 class="section-statement">Upcoming Gatherings</h2>
+        </div>
+        <p class="body-p" style="max-width: 440px;">
+          Curated workshops, intensive hackathons, and design critiques built to accelerate student craft.
+        </p>
+      </div>
+
+      <div class="calendar-layout">
+        <!-- Lead Flagship Event Card -->
+        <article class="event-flagship">
+          <div class="flagship-image-wrap">
+            <img src="assets/event-gathering.jpg" alt="Students collaborating around physical computing hardware and blueprints in studio" class="flagship-img" />
+          </div>
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-meta-top">
+                <span class="category-tag">SAMPLE GATHERING // 48-HR SPRINT</span>
+                <span class="mono-stamp">MARCH 14–16, 2026</span>
+              </div>
+              <h3 class="flagship-title">FLUX Campus Hackathon: Systems & Spaces</h3>
+              <p class="flagship-desc">
+                An intensive multi-track weekend gathering where multidisciplinary teams build software, open hardware, and spatial tools that tangibly improve daily campus life.
+              </p>
+            </div>
+
+            <div>
+              <div class="flagship-specs">
+                <div class="spec-item">
+                  <span class="spec-key">VENUE</span>
+                  <span class="spec-val">Computing & Design Commons</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-key">COHORT CAPACITY</span>
+                  <span class="spec-val">Selected Multidisciplinary Squads</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);">
+                <a href="#join" class="btn btn-cobalt" aria-label="Register for Hackathon cohort preview">
+                  <span>Register for Cohort</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <span class="mono-stamp">[ PREVIEW // REGISTRATION READY ]</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Editorial Calendar Rows -->
+        <div class="calendar-rows">
+          <div class="calendar-row">
+            <div class="row-date">APR 02, 2026</div>
+            <div class="row-title-wrap">
+              <h4>Creative Code & Generative Shaders</h4>
+              <p class="body-p" style="font-size: var(--text-sm);">Interactive WebGL shaders and procedural typography workshop led by senior students.</p>
+            </div>
+            <div class="row-location">Design Lab 4 • CS Commons</div>
+            <a href="#join" class="btn btn-secondary" style="padding: 0.5rem 1rem;" aria-label="RSVP for Creative Code workshop">RSVP</a>
+          </div>
+
+          <div class="calendar-row">
+            <div class="row-date">APR 18, 2026</div>
+            <div class="row-title-wrap">
+              <h4>Micro-Hardware & Embedded Sensors</h4>
+              <p class="body-p" style="font-size: var(--text-sm);">Hands-on sensor assembly, microcontrollers, and IoT telemetry across the campus grounds.</p>
+            </div>
+            <div class="row-location">Makerspace East • Bld 07</div>
+            <a href="#join" class="btn btn-secondary" style="padding: 0.5rem 1rem;" aria-label="RSVP for Micro-Hardware workshop">RSVP</a>
+          </div>
+
+          <div class="calendar-row">
+            <div class="row-date">MAY 06, 2026</div>
+            <div class="row-title-wrap">
+              <h4>Student Fellowship Demo Night</h4>
+              <p class="body-p" style="font-size: var(--text-sm);">Final showcase and project critique with visiting engineering leads, alumni, and campus faculty.</p>
+            </div>
+            <div class="row-location">Main Auditorium • Room 100</div>
+            <a href="#join" class="btn btn-secondary" style="padding: 0.5rem 1rem;" aria-label="RSVP for Fellowship Demo Night">RSVP</a>
+          </div>
+        </div>
+
+        <div>
+          <span class="placeholder-notice">
+            * NOTE: CURATED CALENDAR DATA IS PREVIEWED FOR DEMONSTRATION. OFFICIAL REGISTRATION LINKS AND SESSIONS ARE ANNOUNCED EACH SEMESTER.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- =========================================================================
+         06. PROJECTS / WHAT WE BUILD
+         Tangible Artifacts Portfolio Showcase (Demo / Prototype Archive)
+         ========================================================================= -->
+    <section class="section-padding container" id="projects">
+      <!-- Section Header -->
+      <div class="section-header-compact">
+        <div class="title-wrap">
+          <div class="mono-stamp" style="margin-bottom: var(--space-2);">[ 04 // PROJECT ARCHIVE — PROTOTYPES ]</div>
+          <h2 class="section-statement">What We Build</h2>
+        </div>
+        <p class="body-p" style="max-width: 440px;">
+          Open-source software, custom hardware devices, and digital artifacts produced directly by student teams.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Featured Hero Project -->
+        <article class="project-featured">
+          <div class="project-img-box">
+            <img src="assets/project-matrix.jpg" alt="Campus Matrix real-time spatial monitor and custom sensor PCB" class="project-img" />
+          </div>
+          <div class="project-info-padding">
+            <div class="project-tags">
+              <span class="tag-badge">HARDWARE × WEB</span>
+              <span class="tag-badge">OPEN SOURCE</span>
+              <span class="tag-badge">FLUX LABS</span>
+            </div>
+            <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-2);">Campus Matrix v2.1</h3>
+            <p class="body-p" style="margin-bottom: var(--space-5);">
+              An open-source distributed hardware and web grid that tracks environmental metrics, library seat density, and maker-lab tool availability across campus in real time.
+            </p>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="mono-stamp">SAMPLE SPECIFICATION // MULTI-DEPT TEAM</span>
+              <a href="#join" class="btn btn-secondary" style="padding: 0.5rem 1rem;" aria-label="View Campus Matrix repository preview">View Repository ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Companion Projects Stack -->
+        <div class="project-stack-column">
+          <article class="project-card-compact">
+            <div>
+              <div class="mono-stamp" style="margin-bottom: var(--space-2);">INFRASTRUCTURE // PROTOCOL</div>
+              <h4>Beacon OS</h4>
+              <p>A lightweight, privacy-preserving Bluetooth mesh protocol for coordinating peer-to-peer student study circles and project critiques without central trackers.</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: var(--space-3);">
+              <span class="mono-stamp">SAMPLE PROTOTYPE</span>
+              <span class="mono-stamp" style="color: var(--accent-cobalt);">DOCUMENTATION ↗</span>
+            </div>
+          </article>
+
+          <article class="project-card-compact">
+            <div>
+              <div class="mono-stamp" style="margin-bottom: var(--space-2);">CREATIVE TOOL // TYPOGRAPHY</div>
+              <h4>Studio Script</h4>
+              <p>A web-based generative typographic engine built for student independent publications, zines, and architecture project exhibition labels.</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); padding-top: var(--space-3);">
+              <span class="mono-stamp">SAMPLE WEB APP</span>
+              <span class="mono-stamp" style="color: var(--accent-cobalt);">DEMO TOOL ↗</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         07. JOIN FLUX SECTION
+         Authoritative Editorial Call to Action
+         ========================================================================= -->
+    <section class="section-padding cta-section" id="join">
+      <div class="container cta-box">
+        <div>
+          <div class="mono-stamp" style="color: var(--accent-cobalt); margin-bottom: var(--space-3);">
+            [ INVITATION // COHORT DISPATCH ]
+          </div>
+          <h2 class="cta-statement">
+            Your campus has ideas.<br />
+            Let’s make them tangible.
+          </h2>
+          <p class="cta-desc">
+            Open to developers, designers, hardware hobbyists, and inquisitive researchers across every semester and department. No gatekeeping, no prerequisites — just the drive to build.
+          </p>
+        </div>
+
+        <div class="cta-form-wrap">
+          <div class="cta-form-title">Join the FLUX Dispatch</div>
+          <div class="cta-form-subtitle">Receive invitations to upcoming sprints, project pitch nights, and studio access.</div>
+
+          <form class="cta-form" id="join-form" novalidate>
+            <div>
+              <label for="input-name" class="sr-only">Your Full Name</label>
+              <input type="text" class="cta-input" placeholder="Your Full Name" required aria-label="Your Full Name" id="input-name" name="name" />
+            </div>
+            <div>
+              <label for="input-email" class="sr-only">Campus Email</label>
+              <input type="email" class="cta-input" placeholder="Campus Email (.edu preferred)" required aria-label="Campus Email" id="input-email" name="email" />
+            </div>
+            <div>
+              <label for="input-interest" class="sr-only">Primary Focus / Department</label>
+              <input type="text" class="cta-input" placeholder="Primary Focus (e.g. Frontend, Robotics, UI Design)" aria-label="Primary Focus" id="input-interest" name="interest" />
+            </div>
+            <button type="submit" class="btn btn-cobalt" style="width: 100%; justify-content: center; margin-top: var(--space-2);">
+              <span>Join FLUX</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+            <div class="form-feedback" id="form-feedback" role="alert">
+              ✓ Application preview submitted! (Demonstration mode: connect your intake webhook or database here).
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       08. FOOTER & COLOPHON
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Ethos -->
+        <div>
+          <div class="footer-brand-title">FLUX</div>
+          <p class="footer-tagline">
+            Empowering campus communities through technology, collaboration, and craft. A student-led creative engineering collective.
+          </p>
+          <div class="mono-stamp" style="margin-top: var(--space-4);">
+            COORD: 42.3601° N, 71.0942° W
+          </div>
+        </div>
+
+        <!-- Directory -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <div class="footer-links">
+            <a href="#about" class="footer-link">01 About</a>
+            <a href="#ecosystem" class="footer-link">02 Ecosystem</a>
+            <a href="#events" class="footer-link">03 Events</a>
+            <a href="#projects" class="footer-link">04 Projects</a>
+            <a href="#join" class="footer-link">05 Join FLUX</a>
+          </div>
+        </div>
+
+        <!-- Ecosystem Links -->
+        <div>
+          <div class="footer-col-title">Directory</div>
+          <div class="footer-links">
+            <a href="#projects" class="footer-link">Project Specifications</a>
+            <a href="#events" class="footer-link">Cultural Calendar</a>
+            <a href="#about" class="footer-link">Core Pillars</a>
+            <a href="#ecosystem" class="footer-link">Progressive Pathway</a>
+          </div>
+        </div>
+
+        <!-- Colophon & Social -->
+        <div>
+          <div class="footer-col-title">Connect</div>
+          <div class="footer-links">
+            <a href="#join" class="footer-link">[ GitHub Placeholder ↗ ]</a>
+            <a href="#join" class="footer-link">[ Discord Community ↗ ]</a>
+            <a href="mailto:flux@campus.edu" class="footer-link">flux@campus.edu ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>© 2026 FLUX TECHNICAL COLLECTIVE. ALL RIGHTS RESERVED.</div>
+        <div>DESIGNED AS A LIVING DIGITAL IDENTITY • STUDENT OPERATED</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       09. APPLICATION INTERACTION SCRIPT
+       ========================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Navigation scroll compacting & active spy
+      const nav = document.getElementById('site-nav');
+      const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+
+        // Active section spy
+        let currentSectionId = '';
+        sections.forEach(sec => {
+          const top = sec.offsetTop - 120;
+          const height = sec.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href').replace('#', '');
+          link.classList.toggle('active', href === currentSectionId);
+        });
+      }, { passive: true });
+
+      // 2. Mobile Drawer Toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileDrawer.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileDrawer.setAttribute('aria-hidden', !isOpen);
+        });
+
+        mobileDrawer.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            mobileDrawer.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      // 3. Interactive Ecosystem Pipeline
+      const pipelineData = [
+        {
+          num: 'STAGE 01 // ENTRY POINT',
+          title: 'Students',
+          desc: 'Curious individuals from computer science, art, architecture, business, and humanities join our open studio hours and weekly office hours to discover like-minded collaborators.',
+          highlight: 'KEY OUTCOME: Cross-pollination of diverse campus talent',
+          cadence: 'Weekly Open Sessions',
+          access: 'All Departments / Zero Prereqs',
+          env: 'Studio Lab & Discord Network'
+        },
+        {
+          num: 'STAGE 02 // FORMULATION',
+          title: 'Ideas',
+          desc: 'Students pitch wild concepts, unsolved campus problems, and technical experiments in informal whiteboarding sessions, receiving constructive feedback without judgment.',
+          highlight: 'KEY OUTCOME: Concrete project scopes and architecture plans',
+          cadence: 'Bi-Weekly Ideation Circles',
+          access: 'Open Mic Pitch Nights',
+          env: 'Makerspace & Collaborative Boards'
+        },
+        {
+          num: 'STAGE 03 // SYNERGY',
+          title: 'Teams',
+          desc: 'Complementary skills assemble: a backend engineer pairs with an industrial designer and a systems researcher to form a nimble 3-4 person product pod.',
+          highlight: 'KEY OUTCOME: Multi-disciplinary autonomous squads',
+          cadence: 'Cohort Kickoffs',
+          access: 'Team Matching & Meetups',
+          env: 'Dedicated Collaborative Sprints'
+        },
+        {
+          num: 'STAGE 04 // ACCELERATION',
+          title: 'Events',
+          desc: 'Intensive 48-hour hackathons, deep-dive weekend sprints, and faculty critiques provide the momentum and focus to take an idea from napkin to prototype.',
+          highlight: 'KEY OUTCOME: Working proof-of-concepts & initial demos',
+          cadence: 'Themed Weekend Sprints',
+          access: 'Hardware Kits & Mentors',
+          env: 'Central Design & Computing Commons'
+        },
+        {
+          num: 'STAGE 05 // DEPLOYMENT',
+          title: 'Projects',
+          desc: 'Prototypes are polished, open-sourced on GitHub, documented with architectural monographs, and deployed for genuine campus use.',
+          highlight: 'KEY OUTCOME: Publicly usable software & physical artifacts',
+          cadence: 'Term-End Releases',
+          access: 'Compute Grants & Hardware Funding',
+          env: 'Campus Cloud & Real Hardware'
+        },
+        {
+          num: 'STAGE 06 // AMPLIFICATION',
+          title: 'Community',
+          desc: 'Project leads become mentors, hosting workshops for incoming students and growing the campus engineering culture year after year.',
+          highlight: 'KEY OUTCOME: Long-term institutional momentum & alumni network',
+          cadence: 'Continuous Cycle',
+          access: 'Mentorship & Project Ownership',
+          env: 'Campus-Wide Network'
+        }
+      ];
+
+      const nodes = document.querySelectorAll('.pipeline-node');
+      const stageNumEl = document.getElementById('stage-num-display');
+      const stageTitleEl = document.getElementById('stage-title-display');
+      const stageDescEl = document.getElementById('stage-desc-display');
+      const stageHighlightEl = document.getElementById('stage-highlight-display');
+      const stageCadenceEl = document.getElementById('stage-cadence-display');
+      const stageAccessEl = document.getElementById('stage-access-display');
+      const stageEnvEl = document.getElementById('stage-env-display');
+
+      function selectStage(idx) {
+        nodes.forEach((n, i) => {
+          const isActive = (i === idx);
+          n.classList.toggle('active', isActive);
+          n.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          n.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+
+        const data = pipelineData[idx];
+        if (data) {
+          stageNumEl.textContent = data.num;
+          stageTitleEl.textContent = data.title;
+          stageDescEl.textContent = data.desc;
+          stageHighlightEl.textContent = data.highlight;
+          stageCadenceEl.textContent = data.cadence;
+          stageAccessEl.textContent = data.access;
+          stageEnvEl.textContent = data.env;
+        }
+      }
+
+      nodes.forEach((node, idx) => {
+        node.addEventListener('click', () => selectStage(idx));
+        node.addEventListener('keydown', (e) => {
+          let nextIdx = idx;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            nextIdx = (idx + 1) % nodes.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            nextIdx = (idx - 1 + nodes.length) % nodes.length;
+          } else {
+            return;
+          }
+          nodes[nextIdx].focus();
+          selectStage(nextIdx);
+        });
+      });
+
+      // 4. Join Form Submission Experience
+      const joinForm = document.getElementById('join-form');
+      const feedback = document.getElementById('form-feedback');
+
+      if (joinForm) {
+        joinForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = document.getElementById('input-name');
+          const emailInput = document.getElementById('input-email');
+
+          if (!nameInput.value.trim() || !emailInput.value.trim()) {
+            feedback.textContent = 'Please provide both your name and campus email to proceed.';
+            feedback.style.color = '#E05D52';
+            feedback.classList.add('success');
+            return;
+          }
+
+          feedback.textContent = `✓ Application preview received for ${nameInput.value.trim()} (${emailInput.value.trim()}). Welcome to the FLUX collective.`;
+          feedback.style.color = '#5CD278';
+          feedback.classList.add('success');
+          joinForm.reset();
+        });
+      }
+    });
+  </script>
+
+  <!-- 3D Centerpiece Script -->
+  <script src="hero.js"></script>
+</body>
+</html>
